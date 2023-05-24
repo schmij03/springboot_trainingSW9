@@ -64,7 +64,7 @@ public class Models {
             trainer.initialize(inputShape);
             EasyTrain.fit(trainer, 1, trainDataset, validateDataset);
             TrainingResult result = trainer.getTrainingResult();
-            model.setProperty("Epoch", String.valueOf(1));
+            model.setProperty("Epoch", String.valueOf(2));
             model.setProperty("Accuracy", String.format("%.5f", result.getValidateEvaluation("Accuracy")));
             model.setProperty("Loss", String.format("%.5f", result.getValidateLoss()));
             model.save(Paths.get(Paths.get("src", "main", "model").toString()), MODEL_NAME);
